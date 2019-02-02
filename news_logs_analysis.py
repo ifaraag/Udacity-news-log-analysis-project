@@ -56,3 +56,11 @@ def popular_articles():
 # ------------------------------------------------------------------------------------------------------
        
 
+# Print the number of viwes per author 
+# ------------------------------------------------------------------------------------------------------
+def authors_popularity():
+    authors_popularity = query_database(query_authors_popularity)
+    print("\n\t\t Number of Viwes Per Author \n")
+    for name, count in authors_popularity:
+        print(" {} -- {} views".format(name, count))
+# ------------------------------------------------------------------------------------------------------
