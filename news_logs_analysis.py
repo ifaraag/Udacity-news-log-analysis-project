@@ -8,12 +8,12 @@ import psycopg2
 #-------------------------------------------------------------------------------------------------------
 
 # Query 1:What are the three most popular articles of all time? 
-query_popular_articles = """ title,count (*) as count 
-							from articles join log on '/article/' || articles.slug like log.path 
-							where status like '%200%' 
-							group by title,slug,path 
-							order by count desc 
-							limit 3;"""
+query_popular_articles = """select articles.title,count (*) as count 
+			from articles join log on '/article/' || articles.slug like log.path 
+			where status like '%200%' 
+			group by articles.title
+			order by count desc 
+			limit 3;"""
 # Database query 2: Who are the most popular article authors of all time?
 
 
