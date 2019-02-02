@@ -43,3 +43,16 @@ def query_database(sql_query_request):
     	connection.close()
     return results
 #-------------------------------------------------------------------------------------------------------
+
+# Report Output
+
+# print the three top articles in the database 
+# ------------------------------------------------------------------------------------------------------
+def popular_articles():
+	popular_3_articles = query_database(query_popular_articles)
+    print("\n\t\t The Three Most Popular Articles \n")
+    for title, count in popular_3_articles:
+        print(" \"{}\" -- {} views".format(title, count))
+# ------------------------------------------------------------------------------------------------------
+       
+
