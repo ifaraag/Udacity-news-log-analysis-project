@@ -75,3 +75,8 @@ def bad_requests():
         print("""{0:%B %d, %Y} -- {1:.2f} % errors""".format(day, precent))
 # ------------------------------------------------------------------------------------------------------
 
+
+if __name__ == '__main__':
+    popular_articles()
+    authors_popularity()
+    bad_requests()
