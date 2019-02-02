@@ -24,7 +24,7 @@ The project code requires the following software:
 * `results.txt` - The text output of the [news_logs_analysis.py]
 
 ## System setup and how to view this project
-This project makes use of [Udacity's Linux-based virtual machine (VM)](https://s3.amazonaws.com/video.udacity-data.com/topher/2018/April/5acfbfa3_fsnd-virtual-machine/fsnd-virtual-machine.zip) configuration which includes all of the necessary software to run the application.
+This project makes use of [Udacity's Linux-based virtual machine (VM)] configuration which includes all of the necessary software to run the application.
 1. Download [Vagrant](https://www.vagrantup.com/) and install.
 2. Download [Virtual Box](https://www.virtualbox.org/) and install. 
 3. Download the [fsnd-virtual-machine.zip](https://s3.amazonaws.com/video.udacity-data.com/topher/2018/April/5acfbfa3_fsnd-virtual-machine/fsnd-virtual-machine.zip) and extract to a directory or your choice.
@@ -35,7 +35,7 @@ This project makes use of [Udacity's Linux-based virtual machine (VM)](https://s
 2. ```vagrant ssh``` to log into the VM.
 3. ```cd /vagrant``` to change to your vagrant directory.
 4. ```psql -d news -f newsdata.sql``` to load the data and create the tables.
-5. Run the two [CREATE VIEW ]commands below.
+5. Run the two ```CREATE VIEW ``` commands below.
 6. ```news_logs_analysis.py``` to run the reporting tool.
 
 ## Views used
