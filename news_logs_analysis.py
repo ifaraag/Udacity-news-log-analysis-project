@@ -25,7 +25,5 @@ query_bad_requests = """select *
 			from ( select total_request.day, total_req, num_failed_req, (num_failed_req::float/total_req::float) * 100 as precent 
 			from failed_request, total_request 
 			where failed_request.day=total_request.day ) as error 
-			where  precent  > 1;
-
-
+			where  precent  > 1;"""
 #-------------------------------------------------------------------------------------------------------
