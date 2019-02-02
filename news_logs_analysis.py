@@ -27,3 +27,19 @@ query_bad_requests = """select *
 			where failed_request.day=total_request.day ) as error 
 			where  precent  > 1;"""
 #-------------------------------------------------------------------------------------------------------
+
+# Open connection to database, Query data from the database, Return results and Close the connection
+#-------------------------------------------------------------------------------------------------------
+def query_database(sql_query_request):
+	try:
+		connection = psycopg2.connect(database="news")
+		cursor = connection.cursor()
+	except:
+		print("Failed to connect to the PostgreSQL database.")
+        return None
+    else:
+    	cursor.execute(sql_query_request)
+    	results = cursor.fetchall()
+    	connection.close()
+    return results
+#-------------------------------------------------------------------------------------------------------
