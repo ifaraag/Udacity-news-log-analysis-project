@@ -14,12 +14,12 @@ query_popular_articles = """select articles.title,count (*) as count
 			group by articles.title
 			order by count desc 
 			limit 3;"""
-# Database query 2: Who are the most popular article authors of all time?
-
-
-
-
-
+# Query 2: Which authors get the most page views? Each author Read counts ?
+query_authors_popularity="""select authors.name,count (*) as count
+from articles, log ,authors where '/article/' || articles.slug like log.path
+and log.status like '%200%' and articles.author=authors.id
+group by authors.name
+order by count desc;"""
 # Database query 3: On which day did more than 1% of requests lead to errors?
 
 #-------------------------------------------------------------------------------------------------------
