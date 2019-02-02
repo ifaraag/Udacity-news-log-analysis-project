@@ -24,7 +24,7 @@ The project code requires the following software:
 * `results.txt` - The text output of the [news_logs_analysis.py]
 
 ## System setup and how to view this project
-This project makes use of [Udacity's Linux-based virtual machine (VM)] (https://s3.amazonaws.com/video.udacity-data.com/topher/2018/April/5acfbfa3_fsnd-virtual-machine/fsnd-virtual-machine.zip) configuration which includes all of the necessary software to run the application.
+This project makes use of [Udacity's Linux-based virtual machine (VM)](https://s3.amazonaws.com/video.udacity-data.com/topher/2018/April/5acfbfa3_fsnd-virtual-machine/fsnd-virtual-machine.zip) configuration which includes all of the necessary software to run the application.
 1. Download [Vagrant](https://www.vagrantup.com/) and install.
 2. Download [Virtual Box](https://www.virtualbox.org/) and install. 
 3. Clone this repository to a directory of your choice.
@@ -41,6 +41,7 @@ This project makes use of [Udacity's Linux-based virtual machine (VM)] (https://
 
 #### total_req
 This view is used to only show the dates and the total number of requests to the website (good or bad) done on that day 
+
 ````sql
 CREATE VIEW total_request AS SELECT time::date AS day, count(*) AS total_req
                 FROM log
@@ -51,6 +52,7 @@ CREATE VIEW total_request AS SELECT time::date AS day, count(*) AS total_req
 
 #### failed_request
 This view is used to only show the dates and the total number of bad or requests to the website done on that day 
+
 ````sql 
 
 CREATE VIEW failed_request AS SELECT time::date AS day, count(*) AS num_failed_req
