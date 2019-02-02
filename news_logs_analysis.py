@@ -64,3 +64,14 @@ def authors_popularity():
     for name, count in authors_popularity:
         print(" {} -- {} views".format(name, count))
 # ------------------------------------------------------------------------------------------------------
+
+
+# Print days with more than 1% bad requests
+# ------------------------------------------------------------------------------------------------------
+def bad_requests():
+    bad_requests = query_database(query_bad_requests)
+    print("\n\t\t Days with more than one percentage of bad requests \n")
+    for day, precent in bad_requests:
+        print("""{0:%B %d, %Y} -- {1:.2f} % errors""".format(day, precent))
+# ------------------------------------------------------------------------------------------------------
+
