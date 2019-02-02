@@ -21,7 +21,7 @@ The project code requires the following software:
 
 * `news_logs_analysis.py` - The Python program that connects to the PostgreSQL database, executes the SQL queries and displays the results.
 * `README.md` - This read me file.
-* `results.txt` - The text output of the [news_logs_analysis.py]
+* `new_logs_output.txt` - The text output of the `news_logs_analysis.py`
 
 ## System setup and how to view this project
 This project makes use of [Udacity's Linux-based virtual machine (VM)] configuration which includes all of the necessary software to run the application.
