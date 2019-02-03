@@ -5,7 +5,8 @@
 import psycopg2
 
 
-# Database queries: SQL Queries to get or extract the required information from the newsdata.sql database
+'''Database queries: SQL Queries to get or extract the required information
+ from the newsdata.sql database'''
 # -------------------------------------------------------------------------------------------------------
 
 # Query 1:What are the three most popular articles of all time?
@@ -26,22 +27,24 @@ query_authors_popularity = """select authors.name,count (*) as count
             order by count desc;"""
 # Query 3: On which day did more than 1% of requests lead to errors?
 query_bad_requests = """select *
-            from ( select total_request.day, (num_failed_req::float/total_req::float) * 100 as precent
+            from ( select total_request.day,
+            (num_failed_req::float/total_req::float) * 100 as precent
             from failed_request, total_request
             where failed_request.day=total_request.day ) as error
             where  precent  > 1;"""
 # -------------------------------------------------------------------------------------------------------
 
-# Open connection to database, Query data from the database, Return results
-# and Close the connection
 # -------------------------------------------------------------------------------------------------------
 
 
 def query_database(sql_query_request):
+    ''' Open connection to DB, Query data from the database, Return results
+    and Close the connection
+    '''
     try:
         connection = psycopg2.connect(database="news")
         cursor = connection.cursor()
-    except:
+    except psycopg2.Error:
         print("Failed to connect to the PostgreSQL database.")
         return None
     else:
@@ -53,19 +56,22 @@ def query_database(sql_query_request):
 
 # Report Output
 
-# print the three top articles in the database
 # ------------------------------------------------------------------------------------------------------
+
+
 def popular_articles():
+    '''print the three top articles in the database'''
     popular_3_articles = query_database(query_popular_articles)
     print("\n\t\t The Three Most Popular Articles \n")
     for title, count in popular_3_articles:
         print(" \"{}\" -- {} views".format(title, count))
 # ------------------------------------------------------------------------------------------------------
 
-
-# Print the number of viwes per author
 # ------------------------------------------------------------------------------------------------------
+
+
 def authors_popularity():
+    '''Print the number of viwes per author'''
     authors_popularity = query_database(query_authors_popularity)
     print("\n\t\t Number of Viwes Per Author \n")
     for name, count in authors_popularity:
@@ -73,9 +79,9 @@ def authors_popularity():
 # ------------------------------------------------------------------------------------------------------
 
 
-# Print days with more than 1% bad requests
 # ------------------------------------------------------------------------------------------------------
 def bad_requests():
+    '''Print days with more than 1% bad requests'''
     bad_requests = query_database(query_bad_requests)
     print("\n\t\t Days with more than one percentage of bad requests \n")
     for day, precent in bad_requests:
