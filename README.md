@@ -38,7 +38,7 @@ This project makes use of [Udacity's Linux-based virtual machine (VM)] configura
 5. Run the two ```CREATE VIEW ``` commands below.
 # Open connection to database, Query data from the database, Return results and Close the connection
 # Open connection to database, Query data from the database, Return results and Close the connection
-6. ```news_logs_analysis.py``` to run the reporting tool.
+6. ```python news_logs_analysis.py``` to run the reporting tool.
 
 ## Views used
 
