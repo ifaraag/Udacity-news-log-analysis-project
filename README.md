@@ -10,6 +10,7 @@ The project is a reporting tool that uses information from a database containing
 3. On which days did more than 1% of requests lead to errors?
 
 ## Rquired Libraries and Dependencies
+
 The project code requires the following software:
 
 * Python
@@ -43,6 +44,7 @@ This project makes use of [Udacity's Linux-based virtual machine (VM)] configura
 ## Views used
 
 #### total_req
+
 This view is used to only show the dates and the total number of requests to the website (good or bad) done on that day 
 
 ````sql
@@ -54,6 +56,7 @@ CREATE VIEW total_request AS SELECT time::date AS day, count(*) AS total_req
 ````
 
 #### failed_request
+
 This view is used to only show the dates and the total number of bad or requests to the website done on that day 
 
 ````sql 
@@ -67,6 +70,7 @@ CREATE VIEW failed_request AS SELECT time::date AS day, count(*) AS num_failed_r
 
 
 ## Helpful Resources
+
 * [PEP 8 -- Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/)
 * [PostgreSQL 9.5 Documentation](https://www.postgresql.org/docs/9.5/static/index.html)
 * [Vagrant](https://www.vagrantup.com/downloads)
